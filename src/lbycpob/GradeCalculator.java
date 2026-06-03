@@ -62,3 +62,18 @@ public class GradeCalculator {
             default -> "Unknown";
         };
     }
+
+    public static String getRemarks(char rank) {
+        return switch (Character.toUpperCase(rank)){
+            case 'S' -> "Excellent";
+            case 'A' -> "Superior";
+            case 'B' -> "Very Good";
+            case 'C' -> "Good";
+            case 'D' -> "Satisfactory";
+            case 'E' -> "Fair";
+            case 'P' -> "Poor/Passed";
+            case 'F' -> "Failed";
+            default -> "Unknown";
+        };
+    }
+}
