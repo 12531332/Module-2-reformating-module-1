@@ -18,3 +18,17 @@ public class StudentRepository {
 
     }
 
+    public Student getStudent(int index) {
+        if (index < 0 || index >= count) {
+            return null;
+        }
+        return students[index];
+    }
+
+    // [RETRIEVE] Returns total number of stored students
+    public int getCount() {
+
+        return count;
+    }
+}
+
