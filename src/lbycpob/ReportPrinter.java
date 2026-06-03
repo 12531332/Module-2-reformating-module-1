@@ -46,3 +46,16 @@ public class ReportPrinter {
             return;
         }
 
+        IO.println("\n[TRACE] Processing " + repo.getCount() + " student records...");
+
+        int    highestIndex = 0;
+        int    lowestIndex  = 0;
+
+        printSeparatorLine(); // [TRACE] Static call to sibling static method
+        IO.println("           CLASS STATISTICS REPORT          ");
+        printSeparatorLine();
+        IO.println(String.format("  Total Students:     %d%n", repo.getCount()));
+        IO.println("-".repeat(GradeConstants.SEPARATOR));
+
+    }
+}
