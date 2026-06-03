@@ -56,4 +56,21 @@ public class Student {
         }
         this.idNumber = idNumber.trim();
     }
+
+    public String getName() {
+        return name;
+    }
+    public String getIdNumber() {
+        return idNumber;
+    }
+    public double getRawGrade() {
+        return rawGrade;
+    }
+    public String getNumericGrade() {
+        return numericGrade;
+    }
+    public char getLetterRank() {
+        return letterRank;
+    }
+
 }
