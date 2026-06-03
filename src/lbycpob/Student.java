@@ -10,5 +10,13 @@ public class Student {
     public Student() {
     }
 
+    public Student(String name, String idNumber, double rawGrade, String numericGrade, char letterRank) {
+        setName(name);
+        setIdNumber(idNumber);
+        setRawGrade(rawGrade);
+        setNumericGrade(numericGrade);
+        setLetterRank(letterRank);
+    }
+
 
 }
