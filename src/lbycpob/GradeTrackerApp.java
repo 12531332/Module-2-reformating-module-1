@@ -38,4 +38,13 @@ public class GradeTrackerApp {
 
         } while (!choice.equals("5"));
     }
+    private void inputStudentData() {
+        IO.println("STUDENT DATA ENTRY:");
+        int count = inputHandler.inputStudentCount();
+        for (int i = 0; i < count; i++) {
+            Student s = inputHandler.inputOneStudent(i + 1);
+            repo.addStudent(s);
+        }
+        IO.println("Data saved for " + count + " student(s).");
+    }
 }
