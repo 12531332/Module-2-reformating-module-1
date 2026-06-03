@@ -52,3 +52,36 @@ public class StudentInputHandler {
                 + String.format("%.2f", labAverage));
         return labAverage;
     }
+
+    public Student inputOneStudent(int studentNumber) {
+        String name     = inputName(studentNumber);
+
+        String idNumber = inputIdNumber(studentNumber);
+
+        IO.println("  --- Entering grades for " + name + " ---");
+
+        double labPerformance     = inputLabPerformance();
+
+        double classParticipation = inputComponentScore(
+                "  Class Participation (averaged): ");
+
+        double teacherEvaluation  = inputComponentScore(
+                "  Teacher's Evaluation (averaged): ");
+
+        double practicalExam      = inputComponentScore(
+                "  Practical Exam: ");
+
+        double project            = inputComponentScore(
+                "  Project: ");
+
+        double rawGrade     = GradeCalculator.computeRawGrade(
+                labPerformance, classParticipation,
+                teacherEvaluation, practicalExam, project);
+        String numericGrade = GradeCalculator.assignNumericGrade(rawGrade);
+        char   letterRank   = GradeCalculator.assignLetterRank(rawGrade);
+
+        IO.println("  " + name + "'s final raw score: "
+                + String.format("%.2f", rawGrade));
+
+        return null; // placeholder
+    }
