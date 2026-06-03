@@ -33,4 +33,12 @@ public class Student {
         }
         this.numericGrade = numericGrade.trim();
     }
+
+    public void setRawGrade(double rawGrade) {
+        if (rawGrade < GradeConstants.MIN_SCORE || rawGrade > GradeConstants.MAX_SCORE)
+            IO.println("Error: Raw grade must be between " + GradeConstants.MIN_SCORE + " and " + GradeConstants.MAX_SCORE + ".");
+
+        else
+            this.rawGrade = rawGrade;
+    }
 }
