@@ -35,3 +35,15 @@ public class GradeCalculator {
         else if (avg >= 70.0) return "1.0";
         else return "0.0";
     }
+
+    public static char assignLetterRank(double avg) {
+        if (avg >= 96.0) return 'S';
+        else if (avg >= 92.0) return 'A';
+        else if (avg >= 88.0) return 'B';
+        else if (avg >= 83.0) return 'C';
+        else if (avg >= 78.0) return 'D';
+        else if (avg >= 74.0) return 'E';
+        else if (avg >= 70.0) return 'P';
+        else return 'F';
+
+    }
