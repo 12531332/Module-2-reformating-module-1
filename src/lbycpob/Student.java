@@ -41,4 +41,11 @@ public class Student {
         else
             this.rawGrade = rawGrade;
     }
+
+    public void setName(String name) {
+        if  (name == null || name.isBlank())
+            IO.println("Error: name cannot be null or blank.");
+        else
+            this.name = name.trim();
+    }
 }
