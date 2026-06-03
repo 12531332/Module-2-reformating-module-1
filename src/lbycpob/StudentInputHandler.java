@@ -23,3 +23,16 @@ public class StudentInputHandler {
         } while (count < 1 || count > GradeConstants.MAX_STUDENTS);
         return count;
     }
+
+    public double inputComponentScore(String prompt) {
+        double score;
+        do {
+            IO.print(prompt);
+            score = Double.parseDouble(IO.readln().trim());
+            if (score < GradeConstants.MIN_SCORE || score > GradeConstants.MAX_SCORE)
+                IO.println("  Score must be between "
+                        + GradeConstants.MIN_SCORE + " and "
+                        + GradeConstants.MAX_SCORE + ".");
+        } while (score < GradeConstants.MIN_SCORE || score > GradeConstants.MAX_SCORE);
+        return score;
+    }
