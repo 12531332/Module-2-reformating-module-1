@@ -1,4 +1,4 @@
-package lbycpob
+package lbycpob;
 
 public class GradeCalculator {
 
