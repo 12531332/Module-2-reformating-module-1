@@ -25,4 +25,12 @@ public class Student {
         else
             IO.println("Error: invalid letter rank " + letterRank + ".");
     }
+
+    public void setNumericGrade(String numericGrade) {
+        if (numericGrade == null || numericGrade.isBlank()) {
+            IO.println("Error: invalid numeric grade cannot be null or blank.");
+            return;
+        }
+        this.numericGrade = numericGrade.trim();
+    }
 }
