@@ -29,4 +29,9 @@ public class IDVerifier {
         return calculateDotProduct(idNumber) % GradeConstants.ID_DIVISOR==0;
         // [TRACE] calculateDotProduct(idNumber) % 11 == 0 → valid
     }
+
+    public static String getIDRole(String idNumber) {
+        int quotient = calculateDotProduct(idNumber)/GradeConstants.ID_DIVISOR;
+        return quotient >= GradeConstants.FACULTY_THRESHOLD ? "faculty" : "student";
+    }
 }
