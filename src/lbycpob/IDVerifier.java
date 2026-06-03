@@ -34,4 +34,22 @@ public class IDVerifier {
         int quotient = calculateDotProduct(idNumber)/GradeConstants.ID_DIVISOR;
         return quotient >= GradeConstants.FACULTY_THRESHOLD ? "faculty" : "student";
     }
+
+    public static String validateID(String idNumber) {
+        if (idNumber == null)
+            return "Invalid ID number. Please enter " + GradeConstants.ID_LENGTH + " characters.";
+        if (idNumber.length() != GradeConstants.ID_LENGTH)
+            return "Invalid ID number. Please enter " + GradeConstants.ID_LENGTH + " characters.";
+
+        // [VALIDATE] Digit check — specific message for non-digit input
+        for (char c : idNumber.toCharArray())
+            if (!Character.isDigit(c))
+                return "Invalid ID number. All characters must be digits.";
+
+        if (!isValidID(idNumber))
+            return "Invalid ID number. Dot product must be divisible by " + GradeConstants.ID_DIVISOR + ".";
+
+        // [TRACE] All checks passed — delegate role decision to getIDRole()
+        return "Valid " + getIDRole(idNumber) + " ID number.";
+    }
 }
