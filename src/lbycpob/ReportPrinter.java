@@ -39,3 +39,10 @@ public class ReportPrinter {
         IO.print(sb.toString());
     }
 
+    public static void printClassStats(StudentRepository repo) {
+        if (repo.getCount() == 0) {
+            IO.println("\n[TRACE] studentCount = 0 - No data to process");
+            IO.println("Cannot compute statistics. Please enter student data first.");
+            return;
+        }
+
