@@ -19,5 +19,14 @@ public class IDVerifier {
         IO.println("Exiting ID verification.");
     }
 
+    public static boolean isValidID(String idNumber) {
+        if (idNumber == null) return false;
+        if (idNumber.length() != GradeConstants.ID_LENGTH) return false;
 
+        for (char c : idNumber.toCharArray())
+            if (!Character.isDigit(c)) return false;
+
+        return calculateDotProduct(idNumber) % GradeConstants.ID_DIVISOR==0;
+        // [TRACE] calculateDotProduct(idNumber) % 11 == 0 → valid
+    }
 }
