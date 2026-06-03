@@ -26,4 +26,16 @@ public class GradeTrackerApp {
             IO.print("Enter choice (1-5): ");
 
             choice = IO.readln().trim();
+
+            switch (choice) {
+                case "1" -> inputStudentData();
+                case "2" -> ReportPrinter.printReport(repo);      // [TRACE] Static call
+                case "3" -> ReportPrinter.printClassStats(repo);  // [TRACE] Static call
+                case "4" -> idVerifier.verifyID();
+                case "5" -> IO.println("Goodbye!");
+                default -> IO.println("Invalid choice. Please enter 1 to 5.");
+            }
+
+        } while (!choice.equals("5"));
+    }
 }
