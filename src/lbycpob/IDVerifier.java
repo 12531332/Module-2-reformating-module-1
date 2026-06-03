@@ -52,4 +52,15 @@ public class IDVerifier {
         // [TRACE] All checks passed — delegate role decision to getIDRole()
         return "Valid " + getIDRole(idNumber) + " ID number.";
     }
+
+    private static int calculateDotProduct(String idNumber) {
+        int sum = 0;
+        int weight = GradeConstants.ID_LENGTH;
+        for (char c : idNumber.toCharArray()) {
+            sum += Character.getNumericValue(c) * weight;
+            weight--;
+        }
+
+        return sum;
+    }
 }
