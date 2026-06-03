@@ -18,5 +18,11 @@ public class Student {
         setLetterRank(letterRank);
     }
 
-
+    public void setLetterRank(char letterRank) {
+        String valid = "SABCDEFPFsabcdefpf";
+        if (valid.indexOf(letterRank) >= 0)
+            this.letterRank = Character.toUpperCase(letterRank);
+        else
+            IO.println("Error: invalid letter rank " + letterRank + ".");
+    }
 }
