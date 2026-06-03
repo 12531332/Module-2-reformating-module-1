@@ -48,4 +48,12 @@ public class Student {
         else
             this.name = name.trim();
     }
+
+    public void setIdNumber(String idNumber) {
+        if (idNumber == null || idNumber.isBlank()){
+            IO.println("Error: id number cannot be null or blank.");
+            return;
+        }
+        this.idNumber = idNumber.trim();
+    }
 }
