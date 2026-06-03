@@ -36,3 +36,19 @@ public class StudentInputHandler {
         } while (score < GradeConstants.MIN_SCORE || score > GradeConstants.MAX_SCORE);
         return score;
     }
+
+    public double inputLabPerformance() {
+        double[] moduleScores = new double[GradeConstants.NUM_MODULES];
+
+        IO.println("  --- Laboratory Performance (40% of grade) ---");
+
+        for (int module = 0; module < GradeConstants.NUM_MODULES; module++) {
+            moduleScores[module] = inputComponentScore(
+                    "    Module " + (module + 1) + " score: ");
+        }
+
+        double labAverage = GradeCalculator.computeAverage(moduleScores);
+        IO.println("    Laboratory Performance Average: "
+                + String.format("%.2f", labAverage));
+        return labAverage;
+    }
