@@ -26,3 +26,16 @@ public class ReportPrinter {
 
         sb.repeat("-", TABLE_WIDTH).append("\n");
 
+        for (int i = 0; i < repo.getCount(); i++) {
+            Student s     = repo.getStudent(i);
+//            String  grade = s.getNumericGrade();
+//            char    rank  = s.getLetterRank();
+
+        }
+
+        // [FORMAT] Build table footer
+        sb.repeat("=", TABLE_WIDTH).append("\n");
+
+        IO.print(sb.toString());
+    }
+
