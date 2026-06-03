@@ -85,3 +85,30 @@ public class StudentInputHandler {
 
         return null; // placeholder
     }
+
+    public String inputIdNumber(int studentNumber) {
+        String idNumber;
+        String validationResult;
+
+        do {
+            IO.print("Student " + studentNumber + " ID number ("
+                    + GradeConstants.ID_LENGTH + " digits): ");
+            idNumber = IO.readln().trim();
+
+            // [TRACE] Static call — IDVerifier.validateID(idNumber)
+            //         Returns a descriptive result message string.
+            validationResult = IDVerifier.validateID(idNumber);
+
+            if (validationResult.startsWith("Invalid")) {
+                // [TRACE] Print the specific reason the ID was rejected
+                IO.println("  " + validationResult + " Please try again.");
+            } else {
+                // [TRACE] Print confirmation so the user knows it was accepted
+                IO.println("  " + validationResult);
+            }
+
+        } while (validationResult.startsWith("Invalid"));
+
+        return idNumber;
+    }
+}
